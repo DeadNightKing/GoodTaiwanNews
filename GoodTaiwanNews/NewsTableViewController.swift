@@ -24,9 +24,29 @@ class NewsTableViewController: UITableViewController {
         
     }
     
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.articles.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleTableViewCell", for: indexPath) as? ArticleTableViewCell
+        else {
+            fatalError("ArticleTableViewCell does not exist")
+        }
+        
+        cell.titleLabel.text = self.articles[indexPath.row].title
+        cell.descriptionLabel.text = self.articles[indexPath.row].description
+        
+        return cell
+    }
+    
     private func populateNews(){
         
-        let url = URL(string: "https://newsapi.org/v2/top-headlines?country=us&apiKey=42678638c9514b2cba614b69032aaaa2")!
+        let url = URL(string: "https://newsapi.org/v2/top-headlines?country=tw&category=technology&apiKey=42678638c9514b2cba614b69032aaaa2")!
         
         Observable.just(url)
             .flatMap { url -> Observable<Data> in

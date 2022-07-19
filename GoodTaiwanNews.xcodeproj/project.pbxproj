@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6C2A2D14508294F7D1AEA562 /* Pods_GoodTaiwanNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B78A9EACC58697D357D81EB3 /* Pods_GoodTaiwanNews.framework */; };
 		7B59AD7E288691820003AB2E /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B59AD7D288691820003AB2E /* Article.swift */; };
+		7B59AD8128869B370003AB2E /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B59AD8028869B370003AB2E /* ArticleTableViewCell.swift */; };
 		7B9C720B2884EFEF0065C67B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9C720A2884EFEF0065C67B /* AppDelegate.swift */; };
 		7B9C720D2884EFEF0065C67B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9C720C2884EFEF0065C67B /* SceneDelegate.swift */; };
 		7B9C72122884EFEF0065C67B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B9C72102884EFEF0065C67B /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		5B13CAA35C9123564FDD7A98 /* Pods-GoodTaiwanNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodTaiwanNews.debug.xcconfig"; path = "Target Support Files/Pods-GoodTaiwanNews/Pods-GoodTaiwanNews.debug.xcconfig"; sourceTree = "<group>"; };
 		7B59AD7D288691820003AB2E /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		7B59AD8028869B370003AB2E /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		7B9C72072884EFEF0065C67B /* GoodTaiwanNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodTaiwanNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B9C720A2884EFEF0065C67B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B9C720C2884EFEF0065C67B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +93,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		7B59AD7F28869B190003AB2E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7B59AD8028869B370003AB2E /* ArticleTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		7B9C71FE2884EFEF0065C67B = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +126,7 @@
 		7B9C72092884EFEF0065C67B /* GoodTaiwanNews */ = {
 			isa = PBXGroup;
 			children = (
+				7B59AD7F28869B190003AB2E /* Cells */,
 				7B59AD7C288691540003AB2E /* Models */,
 				7B9C720A2884EFEF0065C67B /* AppDelegate.swift */,
 				7B9C720C2884EFEF0065C67B /* SceneDelegate.swift */,
@@ -337,6 +348,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B59AD8128869B370003AB2E /* ArticleTableViewCell.swift in Sources */,
 				7B59AD7E288691820003AB2E /* Article.swift in Sources */,
 				7B9C720B2884EFEF0065C67B /* AppDelegate.swift in Sources */,
 				7B9C720D2884EFEF0065C67B /* SceneDelegate.swift in Sources */,
