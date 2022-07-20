@@ -46,26 +46,40 @@ class NewsTableViewController: UITableViewController {
     
     private func populateNews(){
         
-        let url = URL(string: "https://newsapi.org/v2/top-headlines?country=tw&category=technology&apiKey=42678638c9514b2cba614b69032aaaa2")!
-        
-        Observable.just(url)
-            .flatMap { url -> Observable<Data> in
-                let request = URLRequest(url: url)
-                return URLSession.shared.rx.data(request: request)
-            }
-            .map { data -> [Article]? in
-                return try? JSONDecoder().decode(ArticalList.self, from: data).articles
-            }
-            .subscribe(onNext: { [weak self] articles in
-                
-                if let articles = articles {
-                    self?.articles = articles
+//        let url = URL(string: "https://newsapi.org/v2/top-headlines?country=tw&category=technology&apiKey=42678638c9514b2cba614b69032aaaa2")!
+//
+//        let resource = Resource<ArticalList>(url: url)
+
+        URLRequest.load(resource: ArticalList.all)
+            .subscribe(onNext: { [weak self] result in
+                if let result = result {
+                    self?.articles = result.articles
                     DispatchQueue.main.async {
                         self?.tableView.reloadData()
                     }
                 }
+
             })
             .disposed(by: disposBag)
+        
+//        Observable.just(url)
+//            .flatMap { url -> Observable<Data> in
+//                let request = URLRequest(url: url)
+//                return URLSession.shared.rx.data(request: request)
+//            }
+//            .map { data -> [Article]? in
+//                return try? JSONDecoder().decode(ArticalList.self, from: data).articles
+//            }
+//            .subscribe(onNext: { [weak self] articles in
+//
+//                if let articles = articles {
+//                    self?.articles = articles
+//                    DispatchQueue.main.async {
+//                        self?.tableView.reloadData()
+//                    }
+//                }
+//            })
+//            .disposed(by: disposBag)
         
     }
 }
